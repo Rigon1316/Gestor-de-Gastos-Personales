@@ -1,0 +1,19 @@
+Analyzing gestor...                                             
+
+   info - Statements in an if should be enclosed in a block - lib\screens\agregar_gasto_screen.dart:119:58 - curly_braces_in_flow_control_structures
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\agregar_gasto_screen.dart:201:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\agregar_gasto_screen.dart:248:42 - deprecated_member_use
+   info - Unnecessary use of multiple underscores - lib\screens\dashboard_screen.dart:17:29 - unnecessary_underscores
+   info - Unnecessary use of multiple underscores - lib\screens\dashboard_screen.dart:18:36 - unnecessary_underscores
+  error - The getter 'promedioGasto' isn't defined for the type 'ExpenseProvider' - lib\screens\dashboard_screen.dart:34:31 - undefined_getter
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\dashboard_screen.dart:71:42 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\dashboard_screen.dart:73:61 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\dashboard_screen.dart:201:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\main_shell.dart:84:35 - deprecated_member_use
+  error - The getter 'categoryTotals' isn't defined for the type 'ExpenseProvider' - lib\screens\reportes_screen.dart:13:27 - undefined_getter
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\reportes_screen.dart:151:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\empty_state.dart:17:30 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\gasto_tile.dart:21:42 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\gasto_tile.dart:47:34 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\quick_card.dart:24:41 - deprecated_member_use
+

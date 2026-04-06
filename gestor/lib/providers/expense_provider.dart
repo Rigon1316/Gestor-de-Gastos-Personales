@@ -27,42 +27,49 @@ class ExpenseProvider with ChangeNotifier {
 
   // Lógica de Cálculos
   double get totalBalance {
-    return _expenses.fold(0.0, (sum, item) => sum + item.amount);
+    return _expenses.fold(0.0, (sum, item) => sum + item.monto);
   }
 
   double get maxExpenseToday {
     final now = DateTime.now();
     final todayExpenses = _expenses.where((expense) {
-      return expense.date.year == now.year &&
-             expense.date.month == now.month &&
-             expense.date.day == now.day;
+      return expense.fecha.year == now.year &&
+          expense.fecha.month == now.month &&
+          expense.fecha.day == now.day;
     }).toList();
 
     if (todayExpenses.isEmpty) return 0.0;
 
     return todayExpenses
-        .map((e) => e.amount)
+        .map((e) => e.monto)
         .reduce((value, element) => value > element ? value : element);
   }
 
-  Map<String, double> get categoryExpensePercentages {
-    if (_expenses.isEmpty) return {};
+  double get promedioGasto {
+    if (_expenses.isEmpty) return 0.0;
+    return totalBalance / _expenses.length;
+  }
 
-    final Map<String, double> categoryTotals = {};
+  Map<String, double> get categoryTotals {
+    if (_expenses.isEmpty) return {};
+    final Map<String, double> totals = {};
     for (var expense in _expenses) {
-      if (categoryTotals.containsKey(expense.category)) {
-        categoryTotals[expense.category] = categoryTotals[expense.category]! + expense.amount;
-      } else {
-        categoryTotals[expense.category] = expense.amount;
-      }
+      totals[expense.categoria] =
+          (totals[expense.categoria] ?? 0) + expense.monto;
     }
+    return totals;
+  }
+
+  Map<String, double> get categoryExpensePercentages {
+    final totals = categoryTotals;
+    if (totals.isEmpty) return {};
 
     final total = totalBalance;
     if (total == 0) return {};
 
     final Map<String, double> percentages = {};
-    categoryTotals.forEach((category, amount) {
-      percentages[category] = (amount / total) * 100;
+    totals.forEach((categoria, amount) {
+      percentages[categoria] = (amount / total) * 100;
     });
 
     return percentages;
